@@ -1,0 +1,66 @@
+INFO - 2024-03-27 03:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-27 03:32:02 --> [DEPRECATED] substr(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\templates\admin\nav.php on line 15.
+ 1 APPPATH\Views\templates\admin\nav.php(15): substr(null, 0, 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\Rafli\\Desktop\\ksrpmiunikom\\app\\Views\\templates\\admin\\nav.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/admin/nav', [], true)
+ 5 APPPATH\Controllers\Home.php(10): view('templates/admin/nav')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Rafli\\Desktop\\ksrpmiunikom\\public\\index.php')
+INFO - 2024-03-27 03:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-27 03:32:33 --> CSRF token verified.
+ERROR - 2024-03-27 03:32:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ksrpmiunikom_db', 3306, '', 0)
+#1 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Rafli\Desktop\ksrpmiunikom\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 C:\Users\Rafli\Desktop\ksrpmiunikom\app\Controllers\AuthController.php(77): CodeIgniter\BaseModel->first()
+#7 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(941): App\Controllers\AuthController->LoginAction()
+#8 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Rafli\Desktop\ksrpmiunikom\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Rafli\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Rafli\Desktop\ksrpmiunikom\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#5 C:\Users\Rafli\Desktop\ksrpmiunikom\app\Controllers\AuthController.php(77): CodeIgniter\BaseModel->first()
+#6 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(941): App\Controllers\AuthController->LoginAction()
+#7 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Users\Rafli\Desktop\ksrpmiunikom\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Rafli\Desktop\ksrpmiunikom\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Rafli\Desktop\ksrpmiunikom\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Rafli\\...')
+#11 {main}
+CRITICAL - 2024-03-27 03:32:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `t_users`
+WHERE `nia` = :nia:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\AuthController.php(77): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->LoginAction()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Rafli\\Desktop\\ksrpmiunikom\\public\\index.php')
+INFO - 2024-03-27 03:33:43 --> CSRF token verified.
+INFO - 2024-03-27 03:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-27 03:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-27 03:34:55 --> CSRF token verified.
+INFO - 2024-03-27 03:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-27 03:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
